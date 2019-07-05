@@ -4,7 +4,7 @@ import os
 import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-helper = input("For Instructions on how to use the program, type help. For info about the creater, type info. To continue press enter: ")
+helper = input("For Instructions on how to use the programme, type help. For info about the creater, type info. To continue press enter: ")
 if helper == "help":
        print("When prompted to enter the host you must Enter the local IP address of the printer.")
        print("If the given host is a printer and it is connected to the internet then you will see success and instructions")
