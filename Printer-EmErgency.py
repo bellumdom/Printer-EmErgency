@@ -1,29 +1,28 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
-import os
 import socket
-sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-helper = input("For Instructions on how to use the programme, type help. For info about the creater, type info. To continue press enter: ")
-if helper == "help":
-       print("When prompted to enter the host you must Enter the local IP address of the printer.")
-       print("If the given host is a printer and it is connected to the internet then you will see success and instructions")
-       input("Press enter to continue: ")
-elif helper == "info":
-       print("This proggram was made by bellum Dom. Watch out for more projects by me such as redirecting malicious traffic")
-       input("Press enter to continue: ")
 
-host = input("[*] Enter The Host: ")
-port = 9100
 
-def ncscript(host):
-	os.system("nc " + host + " 9100")
+print("""\ 
 
-finalhelp = "Type in your message, press enter then finnaly do Control-C to finish and "
+	___________ ___ _      .__        __                 _________
+\______   \_______|__| _____/  |_  ___________  \_   _____/ _____   ___________  ____   ____   ____   ____ ___.__.
+ |     ___/\_  __ \  |/    \   __\/ __ \_  __ \  |    __)_ /     \_/ __ \_  __ \/ ___\_/ __ \ /    \_/ ___<   |  |
+ |    |     |  | \/  |   |  \  | \  ___/|  | \/  |        \  Y Y  \  ___/|  | \/ /_/  >  ___/|   |  \  \___\___  |
+ |____|     |__|  |__|___|  /__|  \___  >__|    /_______  /__|_|  /\___  >__|  \___  / \___  >___|  /\___  > ____|
+                          \/          \/                \/      \/     \/     /_____/      \/     \/     \/\/     
 
-if sock.connect_ex((host,port)):
-	print("Port 9100 is closed")
-else:
-    print("Port 9100 is open")
-    print(finalhelp)
-    ncscript(host)
+		""")
+TCP_IP = raw_input("[*] Please enter the IP address of the printer: ")
+TCP_PORT = 9100
+BUFFER_SIZE = 1024
+MESSAGE = raw_input("Please enter your emergency message: ")
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((TCP_IP, TCP_PORT))
+s.send(MESSAGE)
+data = s.recv(BUFFER_SIZE)
+s.close()
+
+print ("Received data from printer IP", TCP_IP, ":", data)
