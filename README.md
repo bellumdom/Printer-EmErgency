@@ -3,3 +3,11 @@ Printer-EmErgency is a very simple python programm which will print an emergency
 
 WARNING:
 I am in now way responsible for any malicious activity done using this programme. It is meant for only legal purposes. 
+
+Install instructions:
+
+cd Printer-EmErgency
+python3 install.py
+
+Launch:
+./Printer-EmErgency.py
