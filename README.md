@@ -7,6 +7,7 @@ I am in now way responsible for any malicious activity done using this programme
 Install instructions:
 
 cd Printer-EmErgency
+
 python3 install.py
 
 Launch:
