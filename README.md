@@ -18,6 +18,8 @@ Install instructions:
 
 cd Printer-EmErgency
 
-python3 install.py
+python3 launch.py
 
-./Printer-EmErgency.py
+Then It will start! 
+
+YAY
